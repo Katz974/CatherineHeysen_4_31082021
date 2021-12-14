@@ -40,6 +40,21 @@ img {
 .main-navbar {
   float: right;
 }
+
+@media screen and (max-width: 350px) {
+  .main-navbar {
+    float: left;
+  }
+  .topnav a.icon {
+    float: left;
+    display: block;
+  }
+
+  .topnav a {
+    display: none;
+  }
+}
+
 .topnav a {
   float: left;
   display: block;
@@ -183,6 +198,11 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
+}
+
+.content > button {
+  background-color: transparent;
+  border: 0;
 }
 
 .modal-body {
@@ -337,6 +357,10 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
+
+.btn-submit {
+  margin-top: 10px;
+}
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -407,6 +431,7 @@ input[data-error]::after {
 .text-label {
   font-weight: normal;
   font-size: 16px;
+  margin-top: 10px;
 }
 .hero-section {
   max-height: 93vh;
@@ -424,8 +449,15 @@ input[data-error]::after {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
+  /* min-width: 424px; */
 }
+
+/* @media screen and (max-width: 500px) {
+  .hero-content {
+    min-width: 0;
+  }
+} */
+
 .hero-content::after {
   content: '';
   width: 100%;
@@ -444,6 +476,13 @@ input[data-error]::after {
   font-weight: normal;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 500px) {
+  .hero-headline {
+    font-size: 38px;
+  }
+}
+
 .hero-text {
   width: 146%;
   font-weight: normal;
