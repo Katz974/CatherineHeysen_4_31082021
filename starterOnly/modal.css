@@ -28,6 +28,8 @@ p {
 
 img {
   padding-right: 1rem;
+  width: auto;
+  height: auto;
 }
 
 .topnav {
