@@ -55,3 +55,19 @@ function validateLocation() {
     throw new Error('Vous devez choisir une option.')
   }
 }
+
+// FORM EVENT LISTENING
+for (const formData of FORM_DATA) {
+  const input = document.querySelector(`#${formData.id}`)
+  input.addEventListener(formData.eventName ?? 'change', e => {
+    const output = document.querySelector(`#${formData.id} ~ .error`)
+    output.innerHTML = ''
+    if (formData.validateFn) {
+      try {
+        formData.validateFn(formData.checkbox ? input.checked : input.value)
+      } catch (err) {
+        output.innerHTML = err.message
+      }
+    }
+  })
+}
