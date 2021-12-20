@@ -239,6 +239,7 @@ input {
   font-size: 20px;
   height: 48px;
 }
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -369,6 +370,34 @@ input[data-error]::after {
 .btn-submit {
   margin-top: 10px;
 }
+
+/*  thanks modal after form submission */
+
+#thanks {
+  display: none;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 536px;
+  height: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#thanks > div {
+  margin: auto;
+  font-size: 34px;
+  text-align: center;
+  line-height: 1.5em;
+  letter-spacing: 0.6px;
+}
+
+#thanks > span {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  text-align: center;
+}
+
 /* custom select styles */
 .custom-select {
   position: relative;
