@@ -14,12 +14,12 @@ const FORM_DATA = [
   // { id: 'checkbox2'},
 ]
 
+// const formData = {}
+
 // FIRSTNAME AND NAME VALIDATION (SAME EXPECTED)
 function validateName(name) {
   if (name.length < 2) {
-    throw new error(
-      'Veuillez entrer 2 caractères ou plus pour le champ du nom.'
-    )
+    throw new Error('Ce champ doit contenir au-moins 2 caractères.')
   }
 }
 
@@ -70,4 +70,41 @@ for (const formData of FORM_DATA) {
       }
     }
   })
+}
+
+// VALIDATE ONSUBMIT BUTTON "c'est parti"
+function validate() {
+  let shouldContinue = true
+  for (const formData of FORM_DATA) {
+    const input = document.querySelector(`#${formData.id}`)
+    const output = document.querySelector(`#${formData.id} ~ .error`)
+    output.innerHTML = ''
+    if (formData.validateFn) {
+      try {
+        formData.validateFn(formData.checkbox ? input.checked : input.value)
+      } catch (err) {
+        output.innerHTML = err.message
+        shouldContinue = false
+      }
+    } else if (formData.date) {
+      if (!input.valueAsDate) {
+        output.innerHTML = 'Vous devez entrer votre date de naissance.'
+        shouldContinue = false
+      }
+    }
+  }
+
+  const output = document.querySelector('#location1 ~ .error')
+  output.innerHTML = ''
+  try {
+    validateLocation()
+  } catch (err) {
+    output.innerHTML = err.message
+    shouldContinue = false
+  }
+
+  if (shouldContinue) {
+    displaySuccess()
+  }
+  return false
 }
