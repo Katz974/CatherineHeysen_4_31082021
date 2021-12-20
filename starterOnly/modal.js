@@ -22,3 +22,10 @@ function validateName(name) {
     )
   }
 }
+
+// EMAIL VALIDATION
+function validateEmail(email) {
+  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    throw new Error('Entrez une adresse mail valide.')
+  }
+}
