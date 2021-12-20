@@ -108,3 +108,53 @@ function validate() {
   }
   return false
 }
+
+function displaySuccess() {
+  document.querySelector('#modal form').style.display = 'none'
+  document.querySelector('#thanks').style.display = 'flex'
+}
+
+// on pourrait soumettre le formulaire en js via un fetch
+
+// fetch('https://api.example.com', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({
+//     first,
+//     last,
+//     birthdate,
+//   })
+// }
+
+// function validateData(formData) {}
+
+//STORE MODAL FOR LATER USE
+const modal = document.querySelector('#modal')
+
+// MODAL OPENING
+document.querySelectorAll('.modal-btn').forEach(btn =>
+  btn.addEventListener('click', () => {
+    modal.style.display = 'block'
+  })
+)
+
+// MODAL CLOSING
+document.querySelector('.bground .close').addEventListener('click', () => {
+  modal.style.display = 'none'
+})
+
+function editNav() {
+  var x = document.getElementById('myTopnav')
+  if (x.className === 'topnav') {
+    x.className += ' responsive'
+  } else {
+    x.className = 'topnav'
+  }
+}
+
+// THANKS MODAL CLOSING
+document.querySelector('.close2').addEventListener('click', () => {
+  modal.style.display = 'none'
+})
