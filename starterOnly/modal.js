@@ -29,3 +29,29 @@ function validateEmail(email) {
     throw new Error('Entrez une adresse mail valide.')
   }
 }
+
+// TOURNAMENTS AMOUNT VALIDATION
+function validateQuantity(quantity) {
+  if (!/^[0-9]+$/.test(quantity)) {
+    throw new Error('Répondez avec un chiffre.')
+  }
+}
+
+// CONDITIONS MANDATORY VALIDATION
+function validateRequired(checked) {
+  if (!checked) {
+    throw new Error(
+      'Vous devez vérifier que vous acceptez les termes et conditions.'
+    )
+  }
+}
+
+// LOCATION: VALIDATE IS CALLED WHEN THE USER CLICKS ON THE SUBMIT BUTTON
+function validateLocation() {
+  if (
+    document.querySelectorAll('input[type=radio][id^=location]:checked')
+      .length === 0
+  ) {
+    throw new Error('Vous devez choisir une option.')
+  }
+}
