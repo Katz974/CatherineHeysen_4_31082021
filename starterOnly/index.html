@@ -15,16 +15,19 @@
     />
   </head>
   <body>
+    <!-- TOPNAV -->
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
         <img alt="logo" src="Logo.png" />
       </div>
+      <!--  MAIN NAVBAR -->
       <div class="main-navbar">
         <a href="#" class="active"><span>Accueil</span></a>
         <a href="#"><span>Détails de l'évènement</span></a>
         <a href="#"><span>À propos</span></a>
         <a href="#"><span>Contact</span></a>
         <a href="#"><span>Évènements passés</span></a>
+        <!--  JS FUNCTION editNav -->
         <a href="javascript:void(0);" class="icon" onclick="editNav()">
           <i class="fa fa-bars"></i>
         </a>
@@ -42,6 +45,7 @@
             Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux
             réservations... Places limitées !
           </p>
+          <!-- REGISTER BUTTON -->
           <button class="btn-signup modal-btn">je m'inscris</button>
         </div>
         <div class="hero-img">
@@ -49,17 +53,19 @@
         </div>
         <button class="btn-signup modal-btn">je m'inscris</button>
       </div>
-
+      <!--  MODAL  -->
       <div class="bground" id="modal">
         <div class="content">
           <span class="close"></span>
 
           <div class="modal-body">
+            <!-- THANKS MODAL -->
             <div id="thanks">
               <div>Merci pour<br />votre inscription</div>
+              <!-- CLOSE THANKS MODAL BUTTON -->
               <span class="btn-submit close2">Fermer</span>
             </div>
-
+            <!-- FORM => JS FUNCTION validate -->
             <form
               name="reserve"
               action="index.html"
@@ -202,6 +208,8 @@
                   id="checkbox1"
                   checked
                 />
+
+                <!--   CHECKBOXES -->
                 <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
@@ -210,10 +218,11 @@
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
-                  Je Je souhaite être prévenu des prochains évènements.
+                  Je souhaite être prévenu.e des prochains évènements.
                 </label>
                 <br />
               </div>
+              <!-- SUBMIT BUTTON -->
               <input class="btn-submit" type="submit" value="C'est parti" />
             </form>
           </div>
@@ -223,6 +232,7 @@
     <footer>
       <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
     </footer>
+    <!-- JS FILE LINK -->
     <script src="modal.js"></script>
   </body>
 </html>
