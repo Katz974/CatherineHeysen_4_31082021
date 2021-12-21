@@ -11,10 +11,7 @@ const FORM_DATA = [
     validateFn: validateRequired,
     checkbox: true,
   },
-  // { id: 'checkbox2'},
 ]
-
-// const formData = {}
 
 // FIRSTNAME AND NAME VALIDATION (SAME EXPECTED)
 function validateName(name) {
@@ -46,7 +43,7 @@ function validateRequired(checked) {
   }
 }
 
-// LOCATION: VALIDATE IS CALLED WHEN THE USER CLICKS ON THE SUBMIT BUTTON
+// CHOOSE A LOCATION
 function validateLocation() {
   if (
     document.querySelectorAll('input[type=radio][id^=location]:checked')
@@ -72,6 +69,7 @@ for (const formData of FORM_DATA) {
   })
 }
 
+// LOCATION: VALIDATE IS CALLED WHEN THE USER CLICKS ON THE SUBMIT BUTTON
 // VALIDATE ONSUBMIT BUTTON "c'est parti"
 function validate() {
   let shouldContinue = true
@@ -128,8 +126,6 @@ function displaySuccess() {
 //   })
 // }
 
-// function validateData(formData) {}
-
 //STORE MODAL FOR LATER USE
 const modal = document.querySelector('#modal')
 
@@ -141,9 +137,11 @@ document.querySelectorAll('.modal-btn').forEach(btn =>
 )
 
 // MODAL CLOSING
-document.querySelector('.bground .close').addEventListener('click', () => {
-  modal.style.display = 'none'
-})
+document.querySelectorAll('.bground .close').forEach(closeBtn =>
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none'
+  })
+)
 
 function editNav() {
   var x = document.getElementById('myTopnav')
