@@ -276,7 +276,7 @@ input[data-error]::after {
   display: block;
   width: 20px;
   height: 20px;
-  border: 2px solid #279e7a;
+  border: 1px solid white;
   border-radius: 50%;
   text-indent: 29px;
   white-space: nowrap;
@@ -285,6 +285,7 @@ input[data-error]::after {
   top: -1px;
   transition: 0.3s;
 }
+
 .checkbox-label .checkbox-icon::after,
 .checkbox2-label .checkbox-icon::after {
   content: '';
@@ -303,6 +304,9 @@ input[data-error]::after {
 }
 .checkbox-input {
   display: none;
+}
+.checkbox-input:checked + .checkbox-label .checkbox-icon {
+  border-color: #279e7a;
 }
 .checkbox-input:checked + .checkbox-label .checkbox-icon::after,
 .checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
@@ -379,10 +383,12 @@ input[data-error]::after {
   position: relative;
   width: 100%;
   max-width: 536px;
+  min-height: fit-content;
   height: 850px;
   margin-left: auto;
   margin-right: auto;
 }
+
 #thanks > div {
   margin: auto;
   font-size: 34px;
