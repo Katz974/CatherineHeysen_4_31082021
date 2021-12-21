@@ -37,9 +37,7 @@ function validateQuantity(quantity) {
 // CONDITIONS MANDATORY VALIDATION
 function validateRequired(checked) {
   if (!checked) {
-    throw new Error(
-      'Vous devez vérifier que vous acceptez les termes et conditions.'
-    )
+    throw new Error('Vous devez accepter les termes et conditions.')
   }
 }
 
@@ -49,7 +47,7 @@ function validateLocation() {
     document.querySelectorAll('input[type=radio][id^=location]:checked')
       .length === 0
   ) {
-    throw new Error('Vous devez choisir une option.')
+    throw new Error('Veuillez choisir une ville.')
   }
 }
 
