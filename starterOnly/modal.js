@@ -1,4 +1,14 @@
 // ARRAY OF OBJETCS
+// il s agit d une constante que l on nomme par choix explicite FORM_DATA / = / [] signifie qu il s agit d un tableau
+// {} va definir un objet a l interieur de ce tableau / cet objet est compose de plusieurs key:value separes par des ,
+// id est le nom d une key choisie arbitriarement / ' ' signifie qu il s agit d une string
+// la valeur de la string de la 1ere key correspond a des noms donnes dans le htlm
+// on peut egalement appeler des fonctions definies plus tard dans le code
+// leurs noms sont choisis pour etre explicites
+// date: true signifie que la key est de type booleen
+// eventName
+// checkbox
+
 const FORM_DATA = [
   { id: 'first', validateFn: validateName },
   { id: 'last', validateFn: validateName },
@@ -14,6 +24,7 @@ const FORM_DATA = [
 ]
 
 // FIRSTNAME AND NAME VALIDATION (SAME EXPECTED)
+//
 function validateName(name) {
   if (name.length < 2) {
     throw new Error('Ce champ doit contenir au-moins 2 caractères.')
