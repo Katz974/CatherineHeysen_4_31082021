@@ -66,15 +66,6 @@ function validateEmail(email) {
   }
 }
 
-// Date validation
-
-// function validateDate(date) {
-//   if (!input.valueAsDate) {
-//     output.innerHTML = 'Vous devez entrer votre date de naissance.'
-//     shouldContinue = false
-//   }
-// }
-
 // TOURNAMENTS AMOUNT VALIDATION
 function validateQuantity(quantity) {
   if (!/^[0-9]+$/.test(quantity)) {
@@ -162,22 +153,10 @@ function displaySuccess() {
   document.querySelector('#thanks').style.display = 'flex'
 }
 
-// on pourrait soumettre le formulaire en js via un fetch
-
-// fetch('https://api.example.com', {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify({
-//     first,
-//     last,
-//     birthdate,
-//   })
-// }
-
 //STORE MODAL FOR LATER USE
 const modal = document.querySelector('#modal')
+const formModal = document.querySelector('#form-modal')
+const modal2 = document.querySelector('#thanks')
 
 // MODAL OPENING
 document.querySelectorAll('.modal-btn').forEach(btn =>
@@ -205,8 +184,20 @@ function editNav() {
 // THANKS MODAL CLOSING
 document.querySelector('.close2').addEventListener('click', () => {
   modal.style.display = 'none'
+  modal2.style.display = 'none'
+  formModal.style.display = 'block'
 })
 
-document.querySelector('.close2').addEventListener('click', () => {
-  modal.style.display = 'none'
-})
+// on pourrait soumettre le formulaire en js via un fetch
+
+// fetch('https://api.example.com', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({
+//     first,
+//     last,
+//     birthdate,
+//   })
+// }
