@@ -101,7 +101,7 @@ function validateLocation() {
 // (sinon il prend la valeur specifiee dans eventName (a savoir input)
 // Opérateur de coalescence des nuls (Nullish coalescing operator) ?? est un operateur logique qui regarde à gauche et si null ou undefined, il prendra la valeur à droite
 // (e) nom librement donne au parametre de la fonction callback attachee a l eventListener, mecanisme qui permet d avoir acces a l event (parametre de la fonction passee en callback)
-// =>
+// => fonction anonyme
 // {} scope de la fonction
 // defintion d une constante librement nommee output qui pointe sur l element HTML .error suivant l element html ayant pour id
 // la valeur de la key id de l objet formData du tableau d objets FORM_DATA
@@ -113,9 +113,6 @@ function validateLocation() {
 //  si une erreur est detecte, l execution de try est stoppee et catch(err) est lancee
 // un message d erreur est envoye dans la variable output qui vient se loger dans l element HTML correspondant a la classe .error correspondant a l element HTML avec l id
 // egale a la valuer de la key id dns l objet du tableu d objets FORM_DATA
-
-// JE NE COMPRENDS PAS COMMENT EST FAIT LE LIEN ENTRE err.message et new Error (qui contient le msg d erreur adequat)
-
 // le contenu de la fonction callback, contenu dans (e), est appele a s afficher dans la console (pour verifier que le fonctionnement est ok et visualiser le resultat)
 
 for (const formData of FORM_DATA) {
@@ -186,14 +183,23 @@ function validate() {
   return false
 }
 
-// CLOSE FORM MODAL AFTER SUBMIT, LET THANKS MODAL COME BACK
+// CLOSE FORM MODAL AFTER SUBMIT, LET THANKS MODAL COME BACK, UNSET INPUTS
 // le style de l element HTML form ayant une id #modal est passe en display none
 // le style de l element HTML form ayant une id #yhanks est passe en display flex
+//  UNSET INPUTS:
+// tous les inputs de type radio ayant une id commencant par location, passent en checked false
+// tous les inputs apres une classe .formData, adoptent une valeur vide
 function displaySuccess() {
   document.querySelector('#modal form').style.display = 'none'
   document.querySelector('#thanks').style.display = 'flex'
-  document.querySelectorAll('input[type=radio][id^=location]').checked = false
-  document.querySelectorAll('.formData').value = ''
+  document
+    .querySelectorAll('input[type=radio][id^=location]')
+    .forEach(location => {
+      location.checked = false
+    })
+  document.querySelectorAll('.formData input').forEach(input => {
+    input.value = ''
+  })
 }
 
 //STORE MODAL FOR LATER USE
@@ -205,7 +211,7 @@ const modal2 = document.querySelector('#thanks')
 // MODAL OPENING
 // selection de tous les elements HTML portant la classe .modal-btn
 // la methode forEach() execute une fonction sur chacun de ces elements
-// => arrow function
+// => arrow function, fonction anonyme
 // parametre (btn)
 // sur lequel un enventListener ecoute le mouse event 'click'
 // => arrow function sans parametre
@@ -259,3 +265,5 @@ function editNav() {
 //     birthdate,
 //   })
 // }
+
+//       const ftLoc = () => {}
