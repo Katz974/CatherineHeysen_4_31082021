@@ -108,10 +108,12 @@ main {
 }
 
 .footer {
+  display: flex;
+  flex-flow: row wrap;
   padding-left: 2vw;
   padding-right: 2vw;
-  margin: 0 20px;
-  margin: 20px;
+  /* margin: 0 20px;
+  margin: 20px; */
   padding: 10px;
   font-family: var(--font-slab);
 }
@@ -646,7 +648,7 @@ input {
 
 @media screen and (max-width: 1000px) {
   .copyrights {
-    margin-top: 50px;
+    margin: 50px;
     text-align: center;
   }
 }
