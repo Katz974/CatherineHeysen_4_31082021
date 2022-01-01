@@ -164,7 +164,7 @@ function validate() {
       }
     } else if (formData.date) {
       if (!input.valueAsDate) {
-        output.innerHTML = 'Vous devez entrer votre date de naissance.'
+        output.innerHTML = 'Vous devez renseigner votre date de naissance.'
         input.style.border = '2px solid #e54858'
         shouldContinue = false
       } else if (
@@ -243,6 +243,7 @@ document.querySelector('.close2').addEventListener('click', () => {
   formModal.style.display = 'block'
 })
 
+// TRANSFORM ICON INTO NAVIGATION BAR
 function editNav() {
   var x = document.getElementById('myTopnav')
   if (x.className === 'topnav') {
