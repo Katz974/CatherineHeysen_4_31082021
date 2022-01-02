@@ -70,7 +70,8 @@ main {
   margin: 5px;
   text-decoration: none;
   font-size: 18px;
-  font-weight: lighter;
+  letter-spacing: 0.8px;
+  font-weight: normal;
   font-family: Roboto, sans-serif;
 }
 
@@ -352,7 +353,7 @@ input {
   margin: 0 auto;
   border-radius: 7px;
   font-size: 1rem;
-  font-weight: 900;
+  font-weight: 200;
   padding: 12px 62px;
   color: #fff;
   cursor: pointer;
@@ -527,7 +528,7 @@ input {
   outline: none;
   /* text-transform: capitalize; */
   font-size: 1.5rem;
-  padding: 15px 30px;
+  padding: 14px 37px;
   /* margin: 0; */
   margin-top: 75px;
 }
@@ -649,6 +650,12 @@ input {
     float: none;
     display: block;
     text-align: left;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .hero-headline {
+    font-size: 5rem;
   }
 }
 
