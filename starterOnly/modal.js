@@ -39,7 +39,7 @@ function validateEmail(email) {
 // TOURNAMENTS AMOUNT VALIDATION
 
 function validateQuantity(quantity) {
-  if (!/^[0-9]+$/.test(quantity) || quantity > 99) {
+  if (!/^0*(?:[1-9][0-9]?|99)$/.test(quantity)) {
     throw new Error('Répondez avec un chiffre inférieur à 100.')
   }
 }
@@ -79,7 +79,6 @@ for (const formData of FORM_DATA) {
         input.style.border = '2px solid #e54858'
       }
     }
-    console.log(e)
   })
 }
 
