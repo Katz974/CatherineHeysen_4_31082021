@@ -477,7 +477,7 @@ input {
   /* width: 100%; */
   /* grid-template-columns: repeat(12, 1fr); */
   /* overflow: hidden; */
-  box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 7px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
 }
 .hero-content {
